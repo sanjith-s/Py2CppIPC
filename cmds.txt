@@ -1,0 +1,25 @@
+Compile proto file
+
+protoc -I=. --python_out=. message.proto
+
+protoc -I=./ --cpp_out=./ message.proto
+
+https://github.com/junhyeokahn/zmq-protobuf
+
+Compile Server
+
+g++ -o server server.cpp -lpthread -lzmqpp -lzmq -lsodium -Wl,--no-as-needed
+
+Repeated values in protobuf
+https://developers.google.com/protocol-buffers/docs/reference/python-generated#repeated-fields
+
+https://stackoverflow.com/questions/71960226/protocol-buffers-in-python-no-classes-generated
+
+https://stackoverflow.com/questions/7390561/zeromq-protocol-buffers
+
+
+protobuf for cpp
+https://medium.com/geekculture/protocol-buffers-in-c-d60865ae7782
+
+Compile Server with protobuf
+g++ -I /usr/local/include -L /usr/local/lib -o server server.cpp message.pb.cc -lzmqpp -lzmq -lsodium -pthread -lprotobuf -lpthread   -Wl,--no-as-needed
